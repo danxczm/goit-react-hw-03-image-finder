@@ -24,11 +24,11 @@ export class Modal extends Component {
   };
 
   render() {
-    const { largePictureOpened } = this.props;
+    const { largePictureOpened, tags } = this.props;
     return (
       <div className={css.Overlay} onClick={this.onBackDropClick}>
         <div className={css.Modal}>
-          <img src={largePictureOpened} />
+          <img src={largePictureOpened} alt={tags} />
         </div>
       </div>
     );

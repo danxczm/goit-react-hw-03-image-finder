@@ -11,6 +11,7 @@ export class ImageGallery extends Component {
     largePictureOpened: null,
     error: null,
     status: '',
+    tags: '',
     page: null,
     totalHits: null,
     showModal: false,
@@ -60,8 +61,8 @@ export class ImageGallery extends Component {
     }));
   };
 
-  onPictureClick = largePictureOpened => {
-    this.setState({ largePictureOpened });
+  onPictureClick = (largePictureOpened, tags) => {
+    this.setState({ largePictureOpened, tags });
     this.toggleModal();
   };
 
@@ -73,6 +74,7 @@ export class ImageGallery extends Component {
       status,
       showModal,
       largePictureOpened,
+      tags,
     } = this.state;
 
     if (status === 'pending') {
@@ -103,6 +105,7 @@ export class ImageGallery extends Component {
             <Modal
               onModalClose={this.toggleModal}
               largePictureOpened={largePictureOpened}
+              tags={tags}
             />
           )}
         </>
