@@ -24,6 +24,7 @@ export class Modal extends Component {
   };
 
   render() {
+    console.log(`this.props: `, this.props);
     const { largePictureOpened, tags } = this.props;
     return (
       <div className={css.Overlay} onClick={this.onBackDropClick}>
@@ -36,5 +37,5 @@ export class Modal extends Component {
 }
 
 Modal.propTypes = {
-  largeImageURL: PropTypes.string.isRequired,
+  largePictureOpened: PropTypes.string.isRequired,
 };
